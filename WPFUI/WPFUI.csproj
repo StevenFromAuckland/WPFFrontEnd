@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\HillLabTest\HillLabTestEntities\HillLabTestEntities.csproj" />
+    <ProjectReference Include="..\..\..\HillLabTest\HillLabTestEntities\HillLabTestEntities.csproj" />
   </ItemGroup>
 
   <ItemGroup>
