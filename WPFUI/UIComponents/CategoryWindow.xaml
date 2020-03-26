@@ -1,0 +1,52 @@
+﻿<Window x:Class="WPFUI.UIComponents.CategoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFUI.UIComponents"
+        mc:Ignorable="d"
+        Title="Category" SizeToContent="WidthAndHeight" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" Topmost="True">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="Category" Style="{StaticResource TitleLable}"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Content="Category Name:"/>
+            <TextBox Grid.Column="1" Text="{Binding CategoryName}" Width="200"/>
+        </Grid>
+        <Grid Grid.Row="4" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Button x:Uid="Button_6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="OK_Click" >
+                <StackPanel x:Uid="StackPanel_9" Orientation="Horizontal">
+                    <Image x:Uid="Image_7" Source="/Images/OK.ico" Width="16" Height="16" Margin="2,0,2,0"/>
+                    <TextBlock x:Uid="TextBlock_8" Text="OK" Margin="2,0,2,0"/>
+                </StackPanel>
+            </Button>
+            <Button x:Uid="Button_6" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Cancel_Click" >
+                <StackPanel x:Uid="StackPanel_9" Orientation="Horizontal">
+                    <Image x:Uid="Image_7" Source="/Images/Cancel.ico" Width="16" Height="16" Margin="2,0,2,0"/>
+                    <TextBlock x:Uid="TextBlock_8" Text="Cancel" Margin="2,0,2,0"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

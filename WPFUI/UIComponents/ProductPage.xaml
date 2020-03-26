@@ -1,0 +1,113 @@
+﻿<Page x:Class="WPFUI.ProductPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Product Page"
+      Loaded="Page_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Label Grid.Row="0" Content="Products" Style="{StaticResource TitleLable}"/>
+            <Button x:Uid="Button_6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Create_Click" Margin="50,0,0,0">
+                <StackPanel x:Uid="StackPanel_9" Orientation="Horizontal">
+                    <Image x:Uid="Image_7" Source="/Images/New.ico" Width="16" Height="16" Margin="2,0,2,0"/>
+                    <TextBlock x:Uid="TextBlock_8" Text="New Product" Margin="2,0,2,0"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <ScrollViewer  Grid.Row="2" x:Uid="ScrollViewer_1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <DataGrid Name="grdProduct" AutoGenerateColumns="False">
+
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn
+ 
+      x:Uid="DataGridTextColumn_1" Header="ID"
+ 
+      Binding="{Binding ProductId}"
+                    
+ 
+      Width="auto"
+                    
+      SortDirection="Descending" FontWeight="Bold"/>
+
+
+                    <DataGridTextColumn
+ 
+      x:Uid="DataGridTextColumn_2" Header="Product Name"
+ 
+      Binding="{Binding ProductName}"
+                        
+      Width="auto"/>
+
+                    <DataGridTextColumn
+ 
+      x:Uid="DataGridTextColumn_5" Header="Quantity"
+ 
+      Binding="{Binding Quantity, StringFormat=\{0:#0.###\}}"
+                        
+      Width="auto"/>
+
+                    <DataGridTextColumn
+ 
+      x:Uid="DataGridTextColumn_6" Header="Unit"
+ 
+      Binding="{Binding Unit}"
+                        
+      Width="auto"/>
+
+                    <DataGridTextColumn
+ 
+      x:Uid="DataGridTextColumn_3" Header="Category"
+                                                 
+      Binding="{Binding Path=Category.CategoryName}"
+                                                
+      CanUserSort="False"
+
+      Width="auto"/>
+
+
+
+
+                    <DataGridTemplateColumn  x:Uid="DataGridTemplateColumn_2" Width="auto" Header="" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate x:Uid="DataTemplate_2">
+                                <Button x:Uid="Button_6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Edit_Click" >
+                                    <StackPanel x:Uid="StackPanel_9" Orientation="Horizontal">
+                                        <Image x:Uid="Image_7" Source="/Images/edit.ico" Width="16" Height="16" Margin="2,0,2,0"/>
+                                        <TextBlock x:Uid="TextBlock_8" Text="Edit" Margin="2,0,2,0"/>
+                                    </StackPanel>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+
+                    <DataGridTemplateColumn  x:Uid="DataGridTemplateColumn_2" Width="auto" Header="" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate x:Uid="DataTemplate_2">
+                                <Button x:Uid="Button_6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Delete_Click" >
+                                    <StackPanel x:Uid="StackPanel_9" Orientation="Horizontal">
+                                        <Image x:Uid="Image_7" Source="/Images/Delete.ico" Width="16" Height="16" Margin="2,0,2,0"/>
+                                        <TextBlock x:Uid="TextBlock_8" Text="Delete" Margin="2,0,2,0"/>
+                                    </StackPanel>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    
+                </DataGrid.Columns>
+
+            </DataGrid>
+        </ScrollViewer>
+    </Grid>
+</Page>

@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Cancel.ico" />
+    <None Remove="Images\Category.ico" />
+    <None Remove="Images\Delete.ico" />
+    <None Remove="Images\Edit.ico" />
+    <None Remove="Images\New.ico" />
+    <None Remove="Images\OK.ico" />
+    <None Remove="Images\Product.ico" />
+    <None Remove="Images\Save.ico" />
+    <None Remove="Images\ViewData.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0-preview.1.20120.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\HillLabTest\HillLabTestEntities\HillLabTestEntities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Cancel.ico" />
+    <Resource Include="Images\Category.ico" />
+    <Resource Include="Images\Delete.ico" />
+    <Resource Include="Images\Edit.ico" />
+    <Resource Include="Images\New.ico" />
+    <Resource Include="Images\OK.ico" />
+    <Resource Include="Images\Product.ico" />
+    <Resource Include="Images\Save.ico" />
+    <Resource Include="Images\ViewData.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="UIComponents\ProductWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UIComponents\ProductPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="UIComponents\ProductWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UIComponents\ProductPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>
